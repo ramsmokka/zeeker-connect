@@ -1,0 +1,54 @@
+{
+  "name": "connect---next-gen-social",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint . --ext .ts,.tsx,.js,.jsx --report-unused-disable-directives --max-warnings 0",
+    "lint:fix": "eslint . --ext .ts,.tsx,.js,.jsx --fix",
+    "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,css,scss,md}\"",
+    "format:check": "prettier --check \"**/*.{ts,tsx,js,jsx,json,css,scss,md}\"",
+    "type-check": "tsc --noEmit",
+    "validate": "npm run type-check && npm run lint && npm run format:check",
+    "prepare": "husky install || true"
+  },
+  "dependencies": {
+    "@google/genai": "^1.31.0",
+    "framer-motion": "^12.23.26",
+    "lucide-react": "^0.555.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "react-quill": "^2.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.14.0",
+    "@typescript-eslint/eslint-plugin": "^8.20.0",
+    "@typescript-eslint/parser": "^8.20.0",
+    "@vitejs/plugin-react": "^5.0.0",
+    "eslint": "^9.18.0",
+    "eslint-config-prettier": "^10.0.1",
+    "eslint-import-resolver-typescript": "^3.7.0",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-jsx-a11y": "^6.10.2",
+    "eslint-plugin-react": "^7.37.2",
+    "eslint-plugin-react-hooks": "^5.1.0",
+    "eslint-plugin-react-refresh": "^0.4.16",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.2.11",
+    "prettier": "^3.4.2",
+    "typescript": "~5.8.2",
+    "vite": "^6.2.0"
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js,jsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{json,css,scss,md}": [
+      "prettier --write"
+    ]
+  }
+}
